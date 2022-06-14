@@ -32,11 +32,29 @@ nav {
     color: white;
     text-decoration: none;
     font-size: 16px;
+    font-weight: 400;
     
 }
 
-@media screen and (max-width: 768px) {
-    .line{
+.nav-links li a:hover {
+    color: coral;
+    transition: all 2s ease-out;
+}
+
+/* style nav login  */
+.nav-log{
+    border: 1px solid none;
+    border-radius: 50px;
+    padding: 10px;
+    background: crimson ;
+}
+
+/* media screen responsive */
+
+ @media screen and (max-width: 768px) {
+    
+    /* styling the hamburger with CSS .line */
+    .line{ 
         width: 30px;
         height: 3px;
         background: white;
@@ -46,37 +64,38 @@ nav {
     nav {
         position: relative;
     }
-
+        /* the lines up are actually in the hamburger*/
     .hamburger {
         position: absolute;
         cursor: pointer;
         right: 5%; /* moves the hamburger to the right */
         top: 50%;  /* positions it better*/
-        transform: translate(-5%, -50%);
-        z-index: 2;
+        transform: translate(-5%, -50%); /* adding both top 50% and -50%*/
+        z-index: 2; /* z-index makes the hamburger to show in-front */
     }
     
     .nav-links {
         position: fixed;
         background:#5b78c7; 
         height: 100vh;
-        width: 100%;
+        width: 100%;/* 60% width/ 60vh makes the navbar shift to left in a rectangle shape */
         flex-direction: column;
-        clip-path:circle(100px at 90% -10%);
+        clip-path: circle(100px at 90% -10%); /* 90% defines the position, -10% makes it go up. makes a curve diagram */
         /* to add support for other browsers */
-        -webkit-clip-path: circle(100px at 90% -10%);
+        -webkit-clip-path: circle(500px at 100% -9%); /* determinant on how the clip-path opens*/
         transition: all 1s ease-in-out;
+        pointer-events: none;
+        
 
     }
 
     .nav-links.open {
-        clip-path:circle(1000px at 90% -10%);
+        clip-path:circle(100px at 90% -10%);
         /* to add support for other browsers */
-        -webkit-clip-path: circle(1000px at 90% -10%);
-
+        -webkit-clip-path: circle(500px at 100% -9%);
+        pointer-events: all; /* this controls the open and close*/
     }
-    .landing {
-        flex-direction: column;
-    }
+    
 }
+
 
